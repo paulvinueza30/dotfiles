@@ -91,7 +91,7 @@ plugins=(
 
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH_CUSTOM/aliases.zsh
+source ~/.config/zsh/aliases.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
