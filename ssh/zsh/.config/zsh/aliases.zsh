@@ -7,3 +7,4 @@ export PATH="$PATH:$GEM_HOME/bin"
 alias l='colorls -A --sd'
 alias ll='colorls -lA --sd'
 alias c='clear'
+alias kb='sudo kubectl'
