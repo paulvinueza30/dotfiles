@@ -8,11 +8,11 @@ return {
     -- hint = false,
 
     -- To allow arrow keys, you can disable them from being restricted:
-    -- disabled_keys = {
-    --   ["<Up>"] = false,
-    --   ["<Down>"] = false,
-    --   ["<Left>"] = false,
-    --   ["<Right>"] = false,
-    -- },
+    disabled_keys = {
+      ["<Up>"] = false,
+      ["<Down>"] = false,
+      ["<Left>"] = false,
+      ["<Right>"] = false,
+    },
   },
 }
