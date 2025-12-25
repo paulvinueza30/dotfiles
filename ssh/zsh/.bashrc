@@ -1,4 +1,16 @@
-if [ -n "$BASH_VERSION" ] && [ -z "$ZSH_VERSION" ] && command -v zsh >/dev/null 2>&1; then
+CONF_DIR="$HOME/paulv30"
+
+if [ -d "$CONF_DIR" ] && [ -n "$BASH_VERSION" ] && [ -z "$ZSH_VERSION" ]; then
+  export ZDOTDIR="$CONF_DIR/conf/zsh"
+  export PATH="$HOME/.local/bin:$PATH"
+  exec zsh
+  exit 0
+fi
+
+if [ -n "$BASH_VERSION" ] >/dev/null 2>&1; then
+  if ! command -v zsh >/dev/null 2>&1; then
+    sudo apt install zsh
+  fi
   nvim_need_install=false
   if ! command -v nvim >/dev/null 2>&1; then
     nvim_need_install=true
