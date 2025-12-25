@@ -125,3 +125,4 @@ source $HOME/paulv30/conf/zsh/.config/zsh/aliases.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/~/.local/share/gem/ruby/3.4.0/bin:$PATH"
+export PATH="$PATH:/home/head/.local/bin" 
