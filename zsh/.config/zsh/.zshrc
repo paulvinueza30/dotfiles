@@ -126,3 +126,5 @@ source /usr/share/nvm/init-nvm.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH="/~/.local/share/gem/ruby/3.4.0/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+bindkey -v
