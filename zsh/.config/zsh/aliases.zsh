@@ -30,3 +30,8 @@ tiny() {
             ;;
     esac
 }
+
+# Make a dir and cd into it
+mdc (){
+  md -p "$1" && cd "$1"
+}
