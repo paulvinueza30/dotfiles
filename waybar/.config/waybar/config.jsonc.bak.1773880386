@@ -5,8 +5,10 @@
   "spacing": 0,
   "height": 36,
   "modules-left": [
+    "custom/omarchy",
     "hyprland/window",
-    "custom/music"
+    "custom/music",
+    "custom/hyprflow-indicator"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -42,13 +44,12 @@
     }
   },
   "hyprland/window": {
-    "format": "{class}",
+    "format": "<span weight='bold'>{class}</span>",
+    "max-length": 120,
     "icon": true,
-    "icon-size": 16,
-    "separate-outputs": false,
+    "icon-size": 13,
     "rewrite": {
-      "com.mitchellh.ghostty": "ghostty",
-      "chrome-app.hey.com__calendar_weeks_-Default": "HEY Calendar"
+      "com.mitchellh.ghostty": "ghostty"
     }
   },
   "clock": {
@@ -129,4 +130,6 @@
     "interval": 2,
     "on-click": "omarchy-launch-tui btop"
   }
+}
+  },
 }

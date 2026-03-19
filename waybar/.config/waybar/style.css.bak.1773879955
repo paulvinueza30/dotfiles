@@ -42,7 +42,6 @@
 }
 
 #cpu,
-#memory,
 #battery,
 #pulseaudio,
 #custom-omarchy,
@@ -51,11 +50,6 @@
 #window {
   min-width: 12px;
   margin: 0 15px;
-}
-
-#cpu,
-#memory {
-  font-family: 'JetBrainsMono Nerd Font Mono';
 }
 
 #custom-music {
