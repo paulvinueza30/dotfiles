@@ -35,3 +35,6 @@ tiny() {
 mdc (){
   md -p "$1" && cd "$1"
 }
+
+# Quick edit hypr config
+alias hypr='cd ~/.config/hypr && nvim .'
