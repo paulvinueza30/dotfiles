@@ -3,3 +3,7 @@
 -- Add any additional options here
 vim.opt.relativenumber = true
 vim.o.shell = "zsh"
+
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
