@@ -3,14 +3,9 @@
 $obsidian = uwsm app -- obsidian -disable-gpu --enable-wayland-ime
 $spotify = spotify
 $deskthing = deskthing
-$slack = uwsm app -- slack
-$claude = claude
 
 exec-once = ~/.config/hypr/startup-webapps.sh &
 exec-once = $deskthing &
 exec-once = $spotify &
 exec-once = $obsidian &
-exec-once = $claude &
-exec-once = $slack &
-exec-once = [workspace special:scratchpad silent] ghostty &
 exec-once = hyprctl setcursor Bibata-Modern-Class 24

@@ -12,5 +12,4 @@ exec-once = $spotify &
 exec-once = $obsidian &
 exec-once = $claude &
 exec-once = $slack &
-exec-once = [workspace special:scratchpad silent] ghostty &
 exec-once = hyprctl setcursor Bibata-Modern-Class 24
