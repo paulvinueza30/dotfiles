@@ -46,7 +46,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -69,18 +69,40 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zoxide
-  thefuck
-  timer
-  web-search
-  zsh-bat
   you-should-use
 )
 
 
 source $ZSH/oh-my-zsh.sh
 source ~/.config/zsh/aliases.zsh
-source /usr/share/nvm/init-nvm.sh
-# User configuration
+
+# Lazy-load NVM (only when 'nvm' or 'npm' is used)
+export NVM_DIR="$HOME/.nvm"
+load_nvm() {
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm() { unset -f nvm; load_nvm; nvm "$@"; }
+npm() { load_nvm; npm "$@"; }
+node() { load_nvm; node "$@"; }
+
+# Lazy-load thefuck (on-demand only)
+thefuck-fix() {
+  unfunction thefuck-fix
+  eval "$(thefuck --alias-fix 2>/dev/null || true)"
+  thefuck "$@"
+}
+alias fuck='thefuck-fix'
+
+# Atuin - manual sync only (don't block startup)
+export ATUIN_SESSION_MANUAL=1
+# Lazy-load Atuin shell integration (runs on first prompt)
+_atuin_load() {
+  . "$HOME/.atuin/bin/env" 2>/dev/null
+  eval "$(atuin init zsh)" 2>/dev/null
+  precmd_functions=(${precmd_functions:#_atuin_load})
+}
+precmd_functions+=(_atuin_load)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -118,7 +140,3 @@ bindkey -v
 export KEYTIMEOUT=1
 bindkey -M viins 'jj' vi-cmd-mode
 export PATH="$HOME/.local/bin:$PATH"
-
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh)"
