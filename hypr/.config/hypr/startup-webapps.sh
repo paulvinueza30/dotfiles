@@ -1,20 +1,28 @@
 #!/bin/bash
 
+sleep 3
+
 webapp="omarchy-launch-or-focus-webapp --profile-directory=Default"
 
-urls=(
-  "https://discord.com/channels/@me"
-  "https://x.com/"
-  "https://www.linkedin.com/feed/"
-  "https://github.com/"
-  "https://todoist.com/"
-  "http://10.0.0.72:8006/#v1:0:=node%2Fpve:4:5::::::"
-  "https://www.instagram.com/"
-  "https://app.hey.com/calendar/weeks/"
-  "https://gemini.google.com/app"
-)
+hyprctl dispatch exec "[workspace special:Messaging silent; group invade] $webapp https://discord.com/channels/@me"
+sleep 2
 
-for url in "${urls[@]}"; do
-  $webapp "$url" >/dev/null 2>&1 &
-  sleep 2
-done
+hyprctl dispatch exec "[workspace special:AI silent; group invade] $webapp https://gemini.google.com/app"
+sleep 2
+
+hyprctl dispatch exec "[workspace special:X silent] $webapp https://x.com/"
+sleep 1.5
+
+hyprctl dispatch exec "[workspace special:LinkedIn silent] $webapp https://www.linkedin.com/feed/"
+sleep 1.5
+
+hyprctl dispatch exec "[workspace special:GitHub silent] $webapp https://github.com/"
+sleep 1.5
+
+hyprctl dispatch exec "[workspace special:Todoist silent] $webapp https://todoist.com/"
+sleep 1.5
+
+hyprctl dispatch exec "[workspace special:Instagram silent] $webapp https://www.instagram.com/"
+sleep 1.5
+
+hyprctl dispatch exec "[workspace special:Calendar silent] $webapp https://app.hey.com/calendar/weeks/"
