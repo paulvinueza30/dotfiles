@@ -140,3 +140,4 @@ bindkey -v
 export KEYTIMEOUT=1
 bindkey -M viins 'jj' vi-cmd-mode
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$(go env GOBIN):$PATH"
