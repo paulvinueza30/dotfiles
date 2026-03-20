@@ -4,10 +4,10 @@ sleep 3
 
 webapp="omarchy-launch-or-focus-webapp --profile-directory=Default"
 
-hyprctl dispatch exec "[workspace special:Messaging silent; group invade] $webapp https://discord.com/channels/@me"
+hyprctl dispatch exec "[workspace special:Messaging silent] $webapp https://discord.com/channels/@me"
 sleep 2
 
-hyprctl dispatch exec "[workspace special:AI silent; group invade] $webapp https://gemini.google.com/app"
+hyprctl dispatch exec "[workspace special:AI silent] $webapp https://gemini.google.com/app"
 sleep 2
 
 hyprctl dispatch exec "[workspace special:X silent] $webapp https://x.com/"
