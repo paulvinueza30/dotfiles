@@ -131,13 +131,31 @@ precmd_functions+=(_atuin_load)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Starship prompt
+# Starship prompt - use narrow config when terminal is small
+if (( ${COLUMNS:-80} < 90 )); then
+  export STARSHIP_CONFIG=~/dotfiles/starship/.config/starship-narrow.toml
+else
+  export STARSHIP_CONFIG=~/.config/starship.toml
+fi
 eval "$(starship init zsh)"
-export PATH="/~/.local/share/gem/ruby/3.4.0/bin:$PATH"
+
+# Refresh prompt on terminal resize
+TRAPWINCH() {
+  if (( ${COLUMNS:-80} < 90 )); then
+    export STARSHIP_CONFIG=~/dotfiles/starship/.config/starship-narrow.toml
+  else
+    export STARSHIP_CONFIG=~/.config/starship.toml
+  fi
+  zle && zle .reset-prompt
+}
+
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/home/paulmv/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 bindkey -v
 export KEYTIMEOUT=1
 bindkey -M viins 'jj' vi-cmd-mode
-export PATH="$HOME/.local/bin:$PATH"
 export PATH="$(go env GOBIN):$PATH"
+export PATH="/home/paulmv/go/bin:$PATH"
+
+export FUNCNEST=999

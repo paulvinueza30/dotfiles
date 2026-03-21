@@ -1,0 +1,32 @@
+format = "$os$username$directory$character"
+right_format = "$cmd_duration"
+
+[os]
+disabled = false
+style = "fg:#f38ba8"
+format = '[ $symbol ]($style)'
+
+[os.symbols]
+Arch = " "
+
+[username]
+style = "fg:#89b4fa"
+format = '[$output]($style)'
+show_always = false
+
+[directory]
+style = "fg:#cba6f7"
+format = '[ $path ]($style)'
+home_symbol = "~"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[character]
+success_symbol = "[❯](bold fg:#a6e3a1)"
+error_symbol = "[❯](bold fg:#f38ba8)"
+vimcmd_symbol = "[❮](bold fg:#a6e3a1)"
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "italic #6c7086"
+min_time = 0
