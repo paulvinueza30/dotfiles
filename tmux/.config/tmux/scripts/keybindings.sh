@@ -28,6 +28,7 @@ printf "  ${FG_GREEN}║${RST}                      ${BOLD}${FG_BLUE}TMUX KEYBIN
 printf "  ${FG_GREEN}╚══════════════════════════════════════════════════════════════════╝${RST}\n"
 echo ""
 printf "  ${FG_YELLOW}PREFIX: C-Space${RST} ${FG_OVERLAY}(also C-a)${RST}\n"
+printf "  ${FG_OVERLAY}C- = Ctrl  M- = Alt (Meta)  S- = Shift${RST}\n"
 echo ""
 
 # ── Window Management ──
@@ -45,6 +46,7 @@ printf "  ${FG_LAVENDER}│${RST} $(key 'M-S-Left')${FG_LAVENDER}│${RST} $(des
 printf "  ${FG_LAVENDER}│${RST} $(key 'M-S-Right')${FG_LAVENDER}│${RST} $(desc 'Swap window right')                         ${FG_LAVENDER}│${RST}\n"
 printf "  ${FG_LAVENDER}│${RST} $(key 'Tab')${FG_LAVENDER}│${RST} $(desc 'Last window')                               ${FG_LAVENDER}│${RST}\n"
 printf "  ${FG_LAVENDER}│${RST} $(key 'M-Tab')${FG_LAVENDER}│${RST} $(desc 'Last window (no prefix)')                   ${FG_LAVENDER}│${RST}\n"
+printf "  ${FG_LAVENDER}│${RST} $(key 'F')${FG_LAVENDER}│${RST} $(desc 'Choose window by name')                     ${FG_LAVENDER}│${RST}\n"
 printf "  ${FG_LAVENDER}└────────────────────┴───────────────────────────────────────────┘${RST}\n"
 echo ""
 
@@ -66,11 +68,13 @@ echo ""
 printf "  ${FG_BLUE}┌────────────────────────────────────────────────────────────────┐${RST}\n"
 printf "  ${FG_BLUE}│${RST}  ${BOLD}${FG_YELLOW}PANE MANAGEMENT${RST}                                                 ${FG_BLUE}│${RST}\n"
 printf "  ${FG_BLUE}├────────────────────┬───────────────────────────────────────────┤${RST}\n"
-printf "  ${FG_BLUE}│${RST} $(key 'h')${FG_BLUE}│${RST} $(desc 'Split horizontal (same path)')               ${FG_BLUE}│${RST}\n"
-printf "  ${FG_BLUE}│${RST} $(key 'v')${FG_BLUE}│${RST} $(desc 'Split vertical (same path)')                 ${FG_BLUE}│${RST}\n"
+printf "  ${FG_BLUE}│${RST} $(key 'h')${FG_BLUE}│${RST} $(desc 'Split horizontal - top/bottom (same path)')  ${FG_BLUE}│${RST}\n"
+printf "  ${FG_BLUE}│${RST} $(key 'v')${FG_BLUE}│${RST} $(desc 'Split vertical - left/right (same path)')    ${FG_BLUE}│${RST}\n"
+printf "  ${FG_BLUE}│${RST} $(key '|')${FG_BLUE}│${RST} $(desc 'Split vertical - left/right (same path)')    ${FG_BLUE}│${RST}\n"
+printf "  ${FG_BLUE}│${RST} $(key '-')${FG_BLUE}│${RST} $(desc 'Split horizontal - top/bottom (same path)')  ${FG_BLUE}│${RST}\n"
 printf "  ${FG_BLUE}│${RST} $(key 'x')${FG_BLUE}│${RST} $(desc 'Kill pane')                                  ${FG_BLUE}│${RST}\n"
-printf "  ${FG_BLUE}│${RST} $(key 'M-\\')${FG_BLUE}│${RST} $(desc 'Split horizontal (no prefix)')              ${FG_BLUE}│${RST}\n"
-printf "  ${FG_BLUE}│${RST} $(key 'M--')${FG_BLUE}│${RST} $(desc 'Split vertical (no prefix)')                ${FG_BLUE}│${RST}\n"
+printf "  ${FG_BLUE}│${RST} $(key 'M-\\')${FG_BLUE}│${RST} $(desc 'Split vertical - left/right (no prefix)')    ${FG_BLUE}│${RST}\n"
+printf "  ${FG_BLUE}│${RST} $(key 'M--')${FG_BLUE}│${RST} $(desc 'Split horizontal - top/bottom (no prefix)')  ${FG_BLUE}│${RST}\n"
 printf "  ${FG_BLUE}└────────────────────┴───────────────────────────────────────────┘${RST}\n"
 echo ""
 
@@ -90,13 +94,28 @@ printf "  ${FG_PINK}│${RST} $(key 'C-M-S-Down')${FG_PINK}│${RST} $(desc 'Shr
 printf "  ${FG_PINK}└────────────────────┴───────────────────────────────────────────┘${RST}\n"
 echo ""
 
-# ── Popups ──
+# ── Popups & Tools ──
 printf "  ${FG_RED}┌────────────────────────────────────────────────────────────────┐${RST}\n"
 printf "  ${FG_RED}│${RST}  ${BOLD}${FG_YELLOW}POPUPS & TOOLS${RST}                                                  ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}├────────────────────┬───────────────────────────────────────────┤${RST}\n"
 printf "  ${FG_RED}│${RST} $(key 'g')${FG_RED}│${RST} $(desc 'Lazygit popup')                              ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key 'd')${FG_RED}│${RST} $(desc 'Lazydocker popup')                          ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key 't')${FG_RED}│${RST} $(desc 'Terminal popup')                             ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key 'f')${FG_RED}│${RST} $(desc 'FZF file finder -> nvim')                    ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key 'm')${FG_RED}│${RST} $(desc 'View README.md (glow)')                      ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key '\`')${FG_RED}│${RST} $(desc 'Edit tmux.conf in nvim')                      ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key '?')${FG_RED}│${RST} $(desc 'This help menu')                             ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key 'o')${FG_RED}│${RST} $(desc 'Open opencode in new window')                 ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}└────────────────────┴───────────────────────────────────────────┘${RST}\n"
+echo ""
+
+# ── Toggles ──
+printf "  ${FG_PEACH}┌────────────────────────────────────────────────────────────────┐${RST}\n"
+printf "  ${FG_PEACH}│${RST}  ${BOLD}${FG_YELLOW}TOGGLES${RST}                                                        ${FG_PEACH}│${RST}\n"
+printf "  ${FG_PEACH}├────────────────────┬───────────────────────────────────────────┤${RST}\n"
+printf "  ${FG_PEACH}│${RST} $(key 'y')${FG_PEACH}│${RST} $(desc 'Toggle playerctl media display')            ${FG_PEACH}│${RST}\n"
+printf "  ${FG_PEACH}│${RST} $(key 'u')${FG_PEACH}│${RST} $(desc 'Toggle workspace usage display')            ${FG_PEACH}│${RST}\n"
+printf "  ${FG_PEACH}└────────────────────┴───────────────────────────────────────────┘${RST}\n"
 echo ""
 
 # ── Copy Mode ──
