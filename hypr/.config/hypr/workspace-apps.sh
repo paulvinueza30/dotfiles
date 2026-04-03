@@ -11,7 +11,7 @@ declare -A webapps
 webapps["special:X"]="https://x.com/"
 webapps["special:LinkedIn"]="https://www.linkedin.com/feed/"
 webapps["special:GitHub"]="https://github.com/"
-webapps["special:Todoist"]="https://todoist.com/"
+webapps["special:Todoist"]="https://app.todoist.com/app/today"
 webapps["special:Instagram"]="https://www.instagram.com/"
 webapps["special:Calendar"]="https://app.hey.com/calendar/weeks/"
 webapps["special:Reddit"]="https://reddit.com/"
