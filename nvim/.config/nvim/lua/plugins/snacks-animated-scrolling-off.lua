@@ -4,10 +4,16 @@ return {
 		scroll = {
 			enabled = false,
 		},
+		explorer = {
+			enabled = true,
+			hidden = true,
+			include = { ".*" },
+		},
 		picker = {
 			sources = {
 				explorer = {
 					hidden = true,
+					include = { ".*" },
 					auto_close = true,
 					layout = {
 						preview = true,

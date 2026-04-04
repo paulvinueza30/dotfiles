@@ -44,6 +44,8 @@ return {
       require("opencode").toggle()
     end, { desc = "Toggle opencode" })
 
+    vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", { desc = "Window nav from opencode terminal" })
+
     vim.keymap.set({ "n", "x" }, "go", function()
       return require("opencode").operator("@this ")
     end, { desc = "Add range to opencode", expr = true })
