@@ -29,8 +29,26 @@ return {
   config = function()
     ---@type opencode.Opts
     vim.g.opencode_opts = {
-      -- Your configuration, if any; goto definition on the type or field for details
+      server = { port = 42069 },
     }
+
+    -- Functions can't be stored in vim.g, set them directly
+    local oc_config = require("opencode.config")
+    oc_config.opts.server.start = function()
+      require("opencode.terminal").open("opencode --port 42069", {
+        split = "right",
+        width = math.floor(vim.o.columns * 0.35),
+      })
+    end
+    oc_config.opts.server.toggle = function()
+      require("opencode.terminal").toggle("opencode --port 42069", {
+        split = "right",
+        width = math.floor(vim.o.columns * 0.35),
+      })
+    end
+    oc_config.opts.server.stop = function()
+      require("opencode.terminal").close()
+    end
 
     vim.o.autoread = true -- Required for `opts.events.reload`
 
