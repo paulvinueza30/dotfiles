@@ -1,0 +1,105 @@
+# AeroSpace config - Hyprland-style keybinds (CTRL modifier)
+
+config-version = 2
+
+start-at-login = true
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 20
+outer.bottom = 20
+outer.top = 40
+outer.right = 20
+
+[key-mapping]
+preset = 'qwerty'
+
+[mode.main.binding]
+
+# Window navigation
+ctrl-h = 'focus left'
+ctrl-j = 'focus down'
+ctrl-k = 'focus up'
+ctrl-l = 'focus right'
+
+ctrl-left = 'focus left'
+ctrl-down = 'focus down'
+ctrl-up = 'focus up'
+ctrl-right = 'focus right'
+
+# Move windows
+ctrl-shift-h = 'move left'
+ctrl-shift-j = 'move down'
+ctrl-shift-k = 'move up'
+ctrl-shift-l = 'move right'
+
+ctrl-shift-left = 'move left'
+ctrl-shift-down = 'move down'
+ctrl-shift-up = 'move up'
+ctrl-shift-right = 'move right'
+
+# Workspaces
+ctrl-1 = 'workspace 1'
+ctrl-2 = 'workspace 2'
+ctrl-3 = 'workspace 3'
+ctrl-4 = 'workspace 4'
+ctrl-5 = 'workspace 5'
+ctrl-6 = 'workspace 6'
+ctrl-7 = 'workspace 7'
+ctrl-8 = 'workspace 8'
+ctrl-9 = 'workspace 9'
+ctrl-0 = 'workspace 10'
+
+# Move window to workspace
+ctrl-shift-1 = 'move-node-to-workspace 1'
+ctrl-shift-2 = 'move-node-to-workspace 2'
+ctrl-shift-3 = 'move-node-to-workspace 3'
+ctrl-shift-4 = 'move-node-to-workspace 4'
+ctrl-shift-5 = 'move-node-to-workspace 5'
+ctrl-shift-6 = 'move-node-to-workspace 6'
+ctrl-shift-7 = 'move-node-to-workspace 7'
+ctrl-shift-8 = 'move-node-to-workspace 8'
+ctrl-shift-9 = 'move-node-to-workspace 9'
+ctrl-shift-0 = 'move-node-to-workspace 10'
+
+# Workspace navigation
+ctrl-tab = 'workspace-back-and-forth'
+ctrl-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+# Layout
+ctrl-slash = 'layout tiles horizontal vertical'
+ctrl-comma = 'layout accordion horizontal vertical'
+ctrl-e = 'layout tiling floating'
+
+# Resize
+ctrl-minus = 'resize smart -50'
+ctrl-equal = 'resize smart +50'
+
+# Window actions
+ctrl-w = 'close'
+ctrl-f = 'fullscreen'
+
+# Apps
+ctrl-enter = 'exec-and-forget open -na "Ghostty"'
+ctrl-shift-enter = 'exec-and-forget open -na "Safari"'
+
+# Service mode
+ctrl-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
+ctrl-shift-h = ['join-with left', 'mode main']
+ctrl-shift-j = ['join-with down', 'mode main']
+ctrl-shift-k = ['join-with up', 'mode main']
+ctrl-shift-l = ['join-with right', 'mode main']
