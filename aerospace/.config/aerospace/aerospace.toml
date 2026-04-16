@@ -86,7 +86,7 @@ ctrl-minus = 'resize smart -50'
 ctrl-equal = 'resize smart +50'
 
 # Window actions
-ctrl-w = 'close'
+ctrl-w = 'close --quit-if-last-window'
 ctrl-f = 'fullscreen'
 
 # Terminal (tmux session picker)
@@ -130,11 +130,26 @@ run = ['workspace O', 'layout tiling']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = ['workspace M', 'layout tiling']
+if.workspace = 'M'
+run = ['layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['workspace M']
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = ['workspace M', 'layout tiling']
+if.workspace = 'M'
+run = ['layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['workspace M']
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+if.window-title-regex-substring = 'x.com'
+run = ['workspace X']
 
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
@@ -143,3 +158,21 @@ run = ['layout tiling']
 [[on-window-detected]]
 if.app-id = 'com.zen-browser.zen'
 run = ['workspace B', 'layout tiling']
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+if.workspace = 'A'
+run = ['layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = ['workspace A']
+
+[[on-window-detected]]
+if.app-id = 'ai.opencode.desktop'
+if.workspace = 'A'
+run = ['layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'ai.opencode.desktop'
+run = ['workspace A']
