@@ -87,7 +87,7 @@ ctrl-equal = 'resize smart +50'
 
 # Window actions
 ctrl-w = 'close --quit-if-last-window'
-ctrl-f = 'fullscreen'
+ctrl-shift-f = 'fullscreen'
 
 # Terminal (tmux session picker)
 ctrl-enter = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/tmux-session-picker.sh'
