@@ -1,4 +1,4 @@
-format = "$os$username$directory$character"
+format = "$os${custom.userhost}$directory$character"
 right_format = "$cmd_duration"
 
 [os]
@@ -9,10 +9,11 @@ format = '[ $symbol ]($style)'
 [os.symbols]
 Arch = " "
 
-[username]
+[custom.userhost]
+command = 'printf "%s@%s" "$USER" "$(hostname)"'
+when = 'true'
 style = "fg:#89b4fa"
 format = '[$output]($style)'
-show_always = false
 
 [directory]
 style = "fg:#cba6f7"
