@@ -83,8 +83,8 @@ load_nvm() {
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 }
 nvm() { unset -f nvm; load_nvm; nvm "$@"; }
-npm() { load_nvm; npm "$@"; }
-node() { load_nvm; node "$@"; }
+npm() { unset -f npm; load_nvm; npm "$@"; }
+node() { unset -f node; load_nvm; node "$@"; }
 
 # Lazy-load thefuck (on-demand only)
 thefuck-fix() {
@@ -159,3 +159,8 @@ export PATH="$(go env GOBIN):$PATH"
 export PATH="/home/paulmv/go/bin:$PATH"
 
 export FUNCNEST=999
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/4.0.0/bin:$PATH"
+export GEM_HOME="$HOME/.local/share/gem"
+export PATH="$PATH:$GEM_HOME/bin"
