@@ -36,3 +36,4 @@ mdc (){
 
 # Quick edit hypr config
 alias hypr='cd ~/.config/hypr && nvim .'
+alias kb='kubectl'
