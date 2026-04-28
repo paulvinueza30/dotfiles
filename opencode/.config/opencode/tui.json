@@ -1,0 +1,34 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "keybinds": {
+    "leader": "ctrl+x",
+    "session_new": "<leader>n",
+    "session_list": "<leader>l,insert",
+    "session_fork": "<leader>f",
+    "session_rename": "<leader>r",
+    "session_share": "<leader>s",
+    "session_export": "<leader>x",
+    "session_compact": "<leader>c",
+    "model_list": "<leader>m,delete",
+    "model_cycle_recent": "<leader>],]",
+    "model_cycle_recent_reverse": "<leader>[,[",
+    "editor_open": "<leader>e,ctrl+e",
+    "sidebar_toggle": "<leader>b",
+    "status_view": "<leader>s",
+    "agent_cycle": "tab",
+    "agent_cycle_reverse": "shift+tab",
+    "session_child_first": "<leader>down",
+    "session_child_cycle": "ctrl+],right",
+    "session_child_cycle_reverse": "ctrl+[,left",
+    "session_parent": "up",
+    "messages_page_up": "ctrl+u,{",
+    "messages_page_down": "ctrl+d,}",
+    "messages_half_page_up": "ctrl+b",
+    "messages_half_page_down": "ctrl+f",
+    "messages_copy": "<leader>y",
+    "messages_first": "ctrl+g",
+    "messages_last": "alt+g",
+    "command_list": "ctrl+p"
+  }
+}
+
