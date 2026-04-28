@@ -18,6 +18,7 @@ format = '[ $symbol ]($style)'
 
 [os.symbols]
 Arch = ""
+Macos = ""
 
 [custom.userhost]
 command = 'printf "%s@%s" "$USER" "$(hostname)"'
