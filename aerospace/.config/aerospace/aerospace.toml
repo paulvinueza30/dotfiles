@@ -5,10 +5,11 @@ config-version = 2
 start-at-login = true
 
 after-startup-command = [
-  'exec-and-forget open -a Spotify',
-  'exec-and-forget open -a Discord',
-  'exec-and-forget open -a Slack',
-  'exec-and-forget open -a "Zen Browser"',
+  'exec-and-forget sleep 3 && open -a Spotify',
+  'exec-and-forget sleep 3 && open -a Discord',
+  'exec-and-forget sleep 3 && open -a Slack',
+  'exec-and-forget sleep 3 && open -a "Zen Browser"',
+  'exec-and-forget sleep 3 && open -a OpenWhispr',
 ]
 
 enable-normalization-flatten-containers = true
@@ -122,7 +123,7 @@ ctrl-shift-l = ['join-with right', 'mode main']
 # App -> Workspace rules (native apps)
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = ['workspace S', 'layout tiling']
+run = ['workspace S']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
@@ -175,4 +176,13 @@ run = ['layout accordion']
 
 [[on-window-detected]]
 if.app-id = 'ai.opencode.desktop'
+run = ['workspace A']
+
+[[on-window-detected]]
+if.app-id = 'com.herotools.openwispr'
+if.workspace = 'A'
+run = ['layout accordion']
+
+[[on-window-detected]]
+if.app-id = 'com.herotools.openwispr'
 run = ['workspace A']
