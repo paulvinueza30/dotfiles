@@ -22,3 +22,12 @@ else
     echo "$CURRENT" > "$STATE_FILE"
     $AEROSPACE workspace "$WORKSPACE"
 fi
+
+case "$WORKSPACE" in
+    X)
+        WINDOW_COUNT=$($AEROSPACE list-windows --workspace X 2>/dev/null | wc -l | tr -d ' ')
+        if [ "$WINDOW_COUNT" -eq 0 ] 2>/dev/null; then
+            open -a "Google Chrome" --args --app=https://x.com
+        fi
+        ;;
+esac
