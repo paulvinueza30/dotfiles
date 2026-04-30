@@ -1,5 +1,9 @@
-format = "$os${custom.userhost}$directory$character"
-right_format = "$cmd_duration"
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = "$os${custom.userhost}$directory$shell$nodejs$rust$golang$python\n$character"
+right_format = "$status$cmd_duration"
 
 [os]
 disabled = false
@@ -8,12 +12,18 @@ format = '[ $symbol ]($style)'
 
 [os.symbols]
 Arch = " "
+Macos = ""
 
 [custom.userhost]
 command = 'printf "%s@%s" "$USER" "$(hostname)"'
 when = 'true'
 style = "fg:#89b4fa"
 format = '[$output]($style)'
+
+[shell]
+style = "fg:#f9e2af"
+format = '[ 󰰸 ]($style)'
+disabled = false
 
 [directory]
 style = "fg:#cba6f7"
@@ -22,10 +32,35 @@ home_symbol = "~"
 truncation_length = 3
 truncation_symbol = "…/"
 
+[nodejs]
+style = "fg:#89dceb"
+symbol = "󰌞"
+format = '[ 󰌞 $version ]($style)'
+
+[rust]
+style = "fg:#fab387"
+symbol = "󱘗"
+format = '[ 󱘗 $version ]($style)'
+
+[golang]
+style = "fg:#89dceb"
+symbol = " "
+format = '[  $version ]($style)'
+
+[python]
+style = "fg:#f9e2af"
+symbol = "󰌠"
+format = '[ 󰌠 $version ]($style)'
+
 [character]
 success_symbol = "[❯](bold fg:#a6e3a1)"
 error_symbol = "[❯](bold fg:#f38ba8)"
 vimcmd_symbol = "[❮](bold fg:#a6e3a1)"
+
+[status]
+format = '[$status]($style) '
+style = "bold #f38ba8"
+disabled = false
 
 [cmd_duration]
 format = "[$duration]($style)"
