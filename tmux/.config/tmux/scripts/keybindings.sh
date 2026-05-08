@@ -102,7 +102,7 @@ printf "  ${FG_RED}│${RST} $(key 'g')${FG_RED}│${RST} $(desc 'Lazygit popup'
 printf "  ${FG_RED}│${RST} $(key 'd')${FG_RED}│${RST} $(desc 'Lazydocker popup')                          ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key 't')${FG_RED}│${RST} $(desc 'Terminal popup')                             ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key 'f')${FG_RED}│${RST} $(desc 'FZF file finder -> nvim')                    ${FG_RED}│${RST}\n"
-printf "  ${FG_RED}│${RST} $(key 'm')${FG_RED}│${RST} $(desc 'View README.md (glow)')                      ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key 'm')${FG_RED}│${RST} $(desc 'Open leaf')                                  ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key '\`')${FG_RED}│${RST} $(desc 'Edit tmux.conf in nvim')                      ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key '?')${FG_RED}│${RST} $(desc 'This help menu')                             ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key 'o')${FG_RED}│${RST} $(desc 'Open opencode in new window')                 ${FG_RED}│${RST}\n"
