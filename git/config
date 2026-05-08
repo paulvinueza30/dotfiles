@@ -49,6 +49,16 @@
 
 [commit]
 	verbose = true
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	allowedSignersFile = /Users/paulmv/dotfiles/git/allowed_signers
+
+[user]
+	signingkey = /Users/paulmv/.ssh/id_ed25519.pub
 
 [help]
 	autocorrect = prompt
