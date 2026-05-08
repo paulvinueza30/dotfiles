@@ -4,8 +4,12 @@ return {
     keys = function()
       local MiniMove = require("mini.move")
       return {
-        { "<C-S-Down>", function() MiniMove.move_line("down") end, mode = { "n", "v" }, desc = "Move line down" },
-        { "<C-S-Up>", function() MiniMove.move_line("up") end, mode = { "n", "v" }, desc = "Move line up" },
+        { "<S-Down>", function() MiniMove.move_line("down") end, mode = "n", desc = "Move line down" },
+        { "<S-Up>", function() MiniMove.move_line("up") end, mode = "n", desc = "Move line up" },
+        { "<S-Down>", function() MiniMove.move_selection("down") end, mode = "x", desc = "Move selection down" },
+        { "<S-Up>", function() MiniMove.move_selection("up") end, mode = "x", desc = "Move selection up" },
+        { "J", function() MiniMove.move_selection("down") end, mode = "x", desc = "Move selection down" },
+        { "K", function() MiniMove.move_selection("up") end, mode = "x", desc = "Move selection up" },
       }
     end,
     opts = {
@@ -14,6 +18,10 @@ return {
         up = "",
         left = "",
         right = "",
+        line_down = "",
+        line_up = "",
+        line_left = "",
+        line_right = "",
       },
     },
   },
