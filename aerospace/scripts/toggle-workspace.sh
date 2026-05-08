@@ -24,6 +24,12 @@ else
 fi
 
 case "$WORKSPACE" in
+    P)
+        WINDOW_COUNT=$($AEROSPACE list-windows --workspace P 2>/dev/null | wc -l | tr -d ' ')
+        if [ "$WINDOW_COUNT" -eq 0 ] 2>/dev/null; then
+            open -a "Activity Monitor"
+        fi
+        ;;
     X)
         WINDOW_COUNT=$($AEROSPACE list-windows --workspace X 2>/dev/null | wc -l | tr -d ' ')
         if [ "$WINDOW_COUNT" -eq 0 ] 2>/dev/null; then
