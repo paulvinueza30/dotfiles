@@ -92,8 +92,9 @@
 | `prefix g` | Lazygit popup |
 | `prefix d` | Lazydocker popup |
 | `prefix t` | Terminal popup |
+| `prefix T` | Go test picker popup |
 | `prefix f` | FZF file finder → open in nvim |
-| `prefix m` | View README.md (glow) |
+| `prefix m` | Open leaf |
 | `prefix `` ` | Edit tmux.conf in nvim |
 | `prefix ?` | This help menu |
 | `prefix o` | Open opencode in new window |
