@@ -72,6 +72,7 @@
 |--------|---------|
 | Open Terminal | `Alt + Enter` |
 | Open Browser | `Alt + Shift + Enter` |
+| Toggle Activity Monitor workspace | `Ctrl + Shift + P` |
 
 ---
 
