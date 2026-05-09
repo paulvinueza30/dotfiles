@@ -30,8 +30,6 @@ preset = 'qwerty'
 
 # Window navigation (wraps across monitors)
 ctrl-h = 'focus left --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors'
-ctrl-j = 'focus down --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors'
-ctrl-k = 'focus up --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors'
 ctrl-l = 'focus right --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors'
 
 ctrl-left = 'focus left --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors'
@@ -182,7 +180,7 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.herotools.openwispr'
-run = ['workspace A', 'layout floating']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
