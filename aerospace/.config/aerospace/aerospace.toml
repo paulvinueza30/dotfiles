@@ -76,7 +76,7 @@ ctrl-shift-backtick = 'move-workspace-to-monitor --wrap-around next'
 # Layout
 ctrl-slash = 'layout tiles horizontal vertical'
 ctrl-comma = 'layout accordion horizontal vertical'
-ctrl-e = 'layout tiling floating'
+ctrl-backslash = 'layout tiling floating'
 
 # Resize
 ctrl-minus = 'resize smart -50'
@@ -178,12 +178,61 @@ run = ['workspace A']
 [[on-window-detected]]
 if.app-id = 'com.herotools.openwispr'
 if.workspace = 'A'
-run = ['layout accordion']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.herotools.openwispr'
-run = ['workspace A']
+run = ['workspace A', 'layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
 run = ['workspace P', 'layout tiling']
+
+# Float Apple system apps that work better as utility windows
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "System Settings"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AppStore'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "App Store"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Calendar"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Reminders"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Messages"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "FaceTime"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.AddressBook'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Contacts"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Notes"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Home'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Home"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Maps'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Maps"']
+
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.PhotoBooth'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Photo Booth"']

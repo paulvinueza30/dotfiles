@@ -47,8 +47,8 @@
 | Action | Keybind |
 |--------|---------|
 | Toggle tiles/accordion | `Alt + /` |
-| Toggle floating | `Alt + e` |
-| Fullscreen | `Alt + f` |
+| Toggle floating | `Ctrl + f` |
+| Fullscreen | `Ctrl + Shift + f` |
 | Resize smart - | `Alt + -` |
 | Resize smart + | `Alt + =` |
 | Resize width | `Alt + Ctrl + h/l` |
