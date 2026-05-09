@@ -1,1 +1,4 @@
-/home/paulmv/.config/omarchy/current/theme/neovim.lua
+return {
+  { "LazyVim/LazyVim", opts = { colorscheme = "onedark" } },
+  { "olimorris/onedarkpro.nvim", lazy = false, priority = 1000 },
+}
