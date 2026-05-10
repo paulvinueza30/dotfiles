@@ -88,15 +88,35 @@ keybindings:
     - key: "ctrl+k"
       name: page up
       builtin: pageUp
+    - key: "tab"
+      name: next section
+      builtin: nextSection
+    - key: "shift+tab"
+      name: previous section
+      builtin: prevSection
+  prs:
+    - key: "L"
+      name: open PR in leaf
+      command: >
+        gh pr view --repo {{.RepoName}} {{.PrNumber}} --json number,title,body,url --jq
+        '"# PR #\(.number): \(.title)\n\n" + (.body // "") + "\n\n" + .url' |
+        /Users/paulmv/.local/bin/leaf
+  issues:
+    - key: "L"
+      name: open issue in leaf
+      command: >
+        gh issue view --repo {{.RepoName}} {{.IssueNumber}} --json number,title,body,url --jq
+        '"# Issue #\(.number): \(.title)\n\n" + (.body // "") + "\n\n" + .url' |
+        /Users/paulmv/.local/bin/leaf
 repoPaths: {}
 theme:
   ui:
     sectionsShowCount: true
     table:
       showSeparator: true
-      compact: false
+      compact: true
 pager:
-  diff: ""
+  diff: "diffnav"
 confirmQuit: false
 showAuthorIcons: true
 smartFilteringAtLaunch: true

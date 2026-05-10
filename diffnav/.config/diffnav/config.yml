@@ -1,0 +1,8 @@
+ui:
+  showFileTree: true
+  showRootItemInFileTree: true
+  icons: nerd-fonts-filetype
+  colorFileNames: true
+  showDiffStats: true
+  sideBySide: true
+  startFoldersOpenDepth: 1

@@ -1,0 +1,4 @@
+mode = "split"
+line_numbers = true
+wrap_lines = false
+agent_notes = false
