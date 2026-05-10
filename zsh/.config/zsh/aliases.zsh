@@ -38,3 +38,4 @@ mdc (){
 alias hypr='cd ~/.config/hypr && nvim .'
 alias kb='kubectl'
 alias nv='nvim'
+alias dash='gh dash'
