@@ -1,5 +1,138 @@
+auto_focus = true
+mouse = true
+editor = "default"
+status = "default"
+hide_blocked_users = true
+show_attachment_links = true
+autocomplete_limit = 20
+messages_limit = 50
+
 [markdown]
+enabled = true
 theme = "catppuccin-mocha"
+
+[help]
+compact_modifiers = true
+padding = [1, 1]
+separator = " • "
+
+[picker]
+width = 80
+height = 25
+
+[timestamps]
+enabled = true
+format = "3:04PM"
+
+[date_separator]
+enabled = true
+format = "January 2, 2006"
+character = "─"
+
+[notifications]
+enabled = true
+duration = 0
+
+[notifications.sound]
+enabled = true
+only_on_ping = true
+
+[typing_indicator]
+send = true
+receive = true
+
+[sidebar.markers]
+expanded = "▾ "
+collapsed = "▸ "
+leaf = ""
+
+[sidebar.indents]
+dm = 2
+group_dm = 1
+guild = 2
+category = 1
+channel = 2
+forum = 2
+
+[icons]
+guild_category = ""
+guild_text = "#"
+guild_voice = "♪ "
+guild_stage_voice = "♪ "
+guild_announcement_thread = "a-"
+guild_public_thread = "› "
+guild_private_thread = "› "
+guild_announcement = "a-"
+guild_forum = "≡ "
+guild_store = "s-"
+
+[keybinds]
+toggle_guilds_tree = "ctrl+b"
+toggle_channels_picker = "ctrl+k"
+toggle_help = "ctrl+."
+focus_guilds_tree = "ctrl+g"
+focus_messages_list = "ctrl+t"
+focus_message_input = "ctrl+i"
+focus_previous = "ctrl+h"
+focus_next = "ctrl+l"
+logout = "ctrl+d"
+suspend = "ctrl+z"
+quit = "ctrl+c"
+
+[keybinds.picker]
+cancel = "esc"
+up = "ctrl+p"
+down = "ctrl+n"
+top = "home"
+bottom = "end"
+select = "enter"
+
+[keybinds.guilds_tree]
+up = "k"
+down = "j"
+top = "g"
+bottom = "G"
+select_current = "enter"
+yank_id = "i"
+collapse_all = "_"
+collapse_parent_node = "-"
+move_to_parent_node = "p"
+
+[keybinds.messages_list]
+select_up = "k"
+select_down = "j"
+select_top = "g"
+select_bottom = "G"
+scroll_up = "K"
+scroll_down = "J"
+scroll_top = "home"
+scroll_bottom = "end"
+select_reply = "s"
+reply = "R"
+reply_mention = "r"
+cancel = "esc"
+edit = "e"
+delete = "D"
+delete_confirm = "d"
+open = "o"
+yank_content = "y"
+yank_url = "u"
+yank_id = "i"
+
+[keybinds.message_input]
+paste = "ctrl+v"
+send = "enter"
+cancel = "esc"
+tab_complete = "tab"
+undo = "ctrl+u"
+open_editor = "ctrl+e"
+open_file_picker = "ctrl+\\"
+
+[keybinds.mentions_list]
+up = "ctrl+p"
+down = "ctrl+n"
+top = "home"
+bottom = "end"
 
 [theme.title]
 alignment = "left"
