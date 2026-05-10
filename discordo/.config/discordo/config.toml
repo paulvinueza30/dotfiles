@@ -1,0 +1,70 @@
+[markdown]
+theme = "catppuccin-mocha"
+
+[theme.title]
+alignment = "left"
+normal_style = { attributes = "dim" }
+active_style = { foreground = "#89b4fa", attributes = "bold" }
+
+[theme.footer]
+alignment = "left"
+normal_style = { attributes = "dim" }
+active_style = { foreground = "#a6e3a1", attributes = "bold" }
+
+[theme.border]
+enabled = true
+padding = [0, 0, 1, 1]
+normal_style = { attributes = "dim" }
+active_style = { foreground = "#89b4fa", attributes = "bold" }
+normal_set = "round"
+active_set = "round"
+
+[theme.guilds_tree]
+auto_expand_folders = true
+graphics = true
+graphics_color = "#6c7086"
+online_style = { foreground = "#a6e3a1" }
+idle_style = { foreground = "#f9e2af" }
+dnd_style = { foreground = "#f38ba8" }
+offline_style = { foreground = "#6c7086" }
+
+[theme.scroll_bar]
+visibility = "auto"
+glyph_set = "unicode"
+track_style = { attributes = "dim" }
+thumb_style = { foreground = "#cba6f7" }
+
+[theme.messages_list]
+reply_indicator = ">"
+forwarded_indicator = "<"
+author_style = { foreground = "#f5e0dc", attributes = "bold" }
+mention_style = { foreground = "#89b4fa", attributes = "bold" }
+emoji_style = { foreground = "#a6e3a1" }
+url_style = { foreground = "#89b4fa" }
+attachment_style = { foreground = "#f9e2af" }
+message_style = { foreground = "#cdd6f4" }
+selected_message_style = { attributes = "reverse" }
+
+[theme.messages_list.embeds]
+provider_style = { foreground = "#6c7086", attributes = ["dim", "italic"] }
+author_style = { foreground = "#bac2de", attributes = "italic" }
+title_style = { foreground = "#89b4fa", attributes = "bold" }
+description_style = { foreground = "#cdd6f4", attributes = "dim" }
+field_name_style = { foreground = "#f9e2af", attributes = ["bold", "underline"] }
+field_value_style = { foreground = "#cdd6f4" }
+footer_style = { foreground = "#6c7086", attributes = ["dim", "italic"] }
+url_style = { foreground = "#89b4fa", underline = "solid" }
+
+[theme.mentions_list]
+min_width = 20
+max_height = 0
+
+[theme.dialog]
+style = { foreground = "#cdd6f4" }
+background_style = { attributes = "dim" }
+
+[theme.help]
+short_key_style = { foreground = "#6c7086" }
+short_desc_style = { foreground = "#cdd6f4" }
+full_key_style = { foreground = "#6c7086" }
+full_desc_style = { foreground = "#cdd6f4" }
