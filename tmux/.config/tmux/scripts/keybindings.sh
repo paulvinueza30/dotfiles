@@ -106,6 +106,7 @@ printf "  ${FG_RED}│${RST} $(key 'm')${FG_RED}│${RST} $(desc 'Open leaf')   
 printf "  ${FG_RED}│${RST} $(key '\`')${FG_RED}│${RST} $(desc 'Edit tmux.conf in nvim')                      ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key '?')${FG_RED}│${RST} $(desc 'This help menu')                             ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}│${RST} $(key 'o')${FG_RED}│${RST} $(desc 'Open opencode in new window')                 ${FG_RED}│${RST}\n"
+printf "  ${FG_RED}│${RST} $(key 'M-o')${FG_RED}│${RST} $(desc 'Open opencode in its own session')            ${FG_RED}│${RST}\n"
 printf "  ${FG_RED}└────────────────────┴───────────────────────────────────────────┘${RST}\n"
 echo ""
 

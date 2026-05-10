@@ -98,6 +98,7 @@
 | `prefix `` ` | Edit tmux.conf in nvim |
 | `prefix ?` | This help menu |
 | `prefix o` | Open opencode in new window |
+| `M-o` | Open opencode in its own session |
 
 ---
 
