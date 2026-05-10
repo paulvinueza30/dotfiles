@@ -1,0 +1,12 @@
+gui:
+  sidePanelWidth: .20
+git:
+  pagers:
+    - externalDiffCommand: DFT_BACKGROUND=light difft --color=always
+    - pager: delta --side-by-side --line-numbers --paging=never
+    - pager: hunk pager
+
+keybinding:
+  universal:
+    scrollUpMain-alt2: <c-u>
+    scrollDownMain-alt2: <c-d>
