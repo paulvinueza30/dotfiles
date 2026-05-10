@@ -11,9 +11,11 @@
 # Command-line arguments always take priority over this file.
 
 # Color theme
-# Available: arctic, forest, ocean, solarized-dark
+# Built-in themes: arctic, forest, ocean, solarized-dark
+# Or set this to a custom theme file path.
+# Relative paths are resolved from this config file's directory.
 # Default: ocean
-theme = "ocean"
+theme = "catppuccin-mocha.toml"
 
 # Default editor for Ctrl+E
 # Any editor name available in PATH: nano, vim, nvim, micro,
