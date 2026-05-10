@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
+command_timeout = 2000
 
 format = "$os${custom.userhost}$directory$shell$nodejs$rust$golang$python\n$character"
 right_format = "$status$cmd_duration"
