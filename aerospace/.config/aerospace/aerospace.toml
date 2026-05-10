@@ -184,7 +184,7 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
-run = ['workspace P', 'layout tiling']
+run = ['workspace P', 'layout floating']
 
 # Float Apple system apps that work better as utility windows
 [[on-window-detected]]
@@ -238,3 +238,11 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.apple.PhotoBooth'
 run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Photo Booth"']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Photos'
+run = ['layout floating']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = ['layout floating']
