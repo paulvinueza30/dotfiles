@@ -97,7 +97,7 @@ ctrl-shift-y = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-
 ctrl-shift-c = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh C'
 ctrl-shift-x = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh X'
 ctrl-shift-l = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh L'
-ctrl-shift-t = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh T'
+ctrl-shift-t = 'exec-and-forget open -a "Activity Monitor"'
 ctrl-shift-r = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh R'
 ctrl-shift-s = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh S'
 ctrl-shift-p = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh P'
@@ -182,11 +182,11 @@ run = ['layout floating']
 if.app-id = 'com.herotools.openwispr'
 run = ['layout floating']
 
+# Float Apple system apps that work better as utility windows
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
-run = ['workspace P', 'layout floating']
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Activity Monitor"']
 
-# Float Apple system apps that work better as utility windows
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = ['layout floating']
