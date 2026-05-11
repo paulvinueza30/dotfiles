@@ -2,6 +2,13 @@
 
 set -euo pipefail
 
+hide_status=0
+
+if [ "${1:-}" = "--hide-status" ]; then
+  hide_status=1
+  shift
+fi
+
 session_name="${1:-}"
 shift || true
 
@@ -22,5 +29,8 @@ if ! tmux has-session -t "$session_name" 2>/dev/null; then
   tmux new-session -d -s "$session_name" "$@"
 fi
 
-tmux set -t "$session_name" status off
+if [ "$hide_status" -eq 1 ]; then
+  tmux set -t "$session_name" status off
+fi
+
 tmux switch-client -c "$client_tty" -t "$session_name"

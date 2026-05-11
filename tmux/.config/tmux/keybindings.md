@@ -32,6 +32,7 @@
 | `prefix C` | New session (same path) |
 | `prefix K` | Kill session |
 | `prefix R` | Rename session |
+| `prefix ]` | Switch to `forge` session |
 | `prefix P` | Previous session |
 | `prefix N` | Next session |
 | `M-Up` | Previous session (no prefix) |
