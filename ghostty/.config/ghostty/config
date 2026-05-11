@@ -42,5 +42,8 @@ mouse-scroll-multiplier = 0.95
 
 copy-on-select = clipboard
 
+# Allow reading clipboard without prompt (for Neovim clipboard=unnamedplus)
+clipboard-read = allow
+
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
 async-backend = epoll
