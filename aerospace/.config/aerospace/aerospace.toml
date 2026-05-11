@@ -45,7 +45,7 @@ ctrl-shift-right = 'move right --boundaries all-monitors-outer-frame'
 
 # Workspaces (numbered)
 ctrl-1 = 'workspace 1'
-ctrl-2 = 'workspace 2'
+ctrl-2 = ['workspace 2', 'layout accordion']
 ctrl-3 = 'workspace 3'
 ctrl-4 = 'workspace 4'
 ctrl-5 = 'workspace 5'
@@ -87,6 +87,9 @@ ctrl-shift-f = 'fullscreen'
 # Terminal (tmux session picker)
 ctrl-enter = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/tmux-session-picker.sh'
 
+ctrl-shift-enter = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/open-vps-tmux.sh'
+
+
 # App Launchers -> toggle workspaces
 ctrl-shift-b = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh B'
 ctrl-shift-g = 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/toggle-workspace.sh G'
@@ -125,6 +128,10 @@ if.app-id = 'md.obsidian'
 run = ['workspace O', 'layout tiling']
 
 [[on-window-detected]]
+if.workspace = '2'
+run = ['layout accordion']
+
+[[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 if.workspace = 'M'
 run = ['layout accordion']
@@ -153,7 +160,10 @@ run = ['layout tiling']
 
 [[on-window-detected]]
 if.window-title-regex-substring = 'Bitwarden'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "zen" "Bitwarden"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "zen" "Bitwarden"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.zen-browser.zen'
@@ -189,7 +199,10 @@ run = ['layout floating']
 # Float Apple system apps that work better as utility windows
 [[on-window-detected]]
 if.app-id = 'com.apple.ActivityMonitor'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Activity Monitor"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Activity Monitor"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
@@ -197,43 +210,73 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "System Settings"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "System Settings"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.AppStore'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "App Store"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "App Store"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iCal'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Calendar"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Calendar"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.reminders'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Reminders"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Reminders"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.MobileSMS'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Messages"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Messages"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.FaceTime'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "FaceTime"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "FaceTime"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.AddressBook'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Contacts"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Contacts"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Notes'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Notes"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Notes"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Home'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Home"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Home"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Maps'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Maps"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Maps"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.todoist.mac.Todoist'
@@ -241,7 +284,10 @@ run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.PhotoBooth'
-run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Photo Booth"']
+run = [
+  'layout floating',
+  'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "Photo Booth"',
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Photos'
