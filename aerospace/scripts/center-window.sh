@@ -1,18 +1,41 @@
 #!/bin/bash
 
 app_name="$1"
+window_title_substring="$2"
 
 if [ -z "$app_name" ]; then
   exit 1
 fi
 
-osascript -l JavaScript <<'JXA' "$app_name"
+osascript -l JavaScript <<'JXA' "$app_name" "$window_title_substring"
 function run(argv) {
   ObjC.import('AppKit')
 
   const appName = argv[0]
+  const titleSubstring = argv[1] ? argv[1].toLowerCase() : ''
   const systemEvents = Application('System Events')
   systemEvents.includeStandardAdditions = true
+
+  function targetWindow(proc) {
+    const windows = proc.windows()
+
+    if (!titleSubstring) {
+      return windows[0]
+    }
+
+    for (const win of windows) {
+      try {
+        const title = String(win.name() || '').toLowerCase()
+        if (title.includes(titleSubstring)) {
+          return win
+        }
+      } catch (error) {
+        // Ignore transient window title lookup failures.
+      }
+    }
+
+    return windows[0]
+  }
 
   function visibleFrames() {
     const screens = $.NSScreen.screens
@@ -48,7 +71,7 @@ function run(argv) {
 
     try {
       const proc = systemEvents.processes.byName(appName)
-      const win = proc.windows[0]
+      const win = targetWindow(proc)
       const position = win.position()
       const size = win.size()
       const frames = visibleFrames()

@@ -152,6 +152,10 @@ if.app-id = 'com.google.Chrome'
 run = ['layout tiling']
 
 [[on-window-detected]]
+if.window-title-regex-substring = 'Bitwarden'
+run = ['layout floating', 'exec-and-forget /Users/paulmv/dotfiles/aerospace/scripts/center-window.sh "zen" "Bitwarden"']
+
+[[on-window-detected]]
 if.app-id = 'com.zen-browser.zen'
 run = ['workspace B', 'layout tiling']
 
