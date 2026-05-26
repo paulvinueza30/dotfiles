@@ -15,6 +15,32 @@
       "type": "remote",
       "url": "https://api.n8n-mcp.com/mcp",
       "enabled": true
+    },
+    "stitch": {
+      "type": "remote",
+      "url": "https://stitch.googleapis.com/mcp",
+      "enabled": false,
+      "headers": {
+        "X-Goog-Api-Key": "{file:./secrets/stitch_api_key}"
+      }
+    },
+    "coolify": {
+      "type": "remote",
+      "url": "http://129.213.43.164:8000/mcp",
+      "enabled": false,
+      "headers": {
+        "Authorization": "Bearer {file:./secrets/coolify_token}"
+      },
+      "oauth": false
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": false,
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {file:./secrets/github_token}"
+      }
     }
   }
 }
