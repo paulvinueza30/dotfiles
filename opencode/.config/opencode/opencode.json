@@ -14,7 +14,19 @@
     "n8n-mcp": {
       "type": "remote",
       "url": "https://api.n8n-mcp.com/mcp",
-      "enabled": true
+      "enabled": false
+    },
+    "n8n-mcp-local": {
+      "type": "local",
+      "command": ["npx", "n8n-mcp"],
+      "enabled": false,
+      "env": {
+        "MCP_MODE": "stdio",
+        "LOG_LEVEL": "error",
+        "DISABLE_CONSOLE_OUTPUT": "true",
+        "N8N_API_URL": "{file:./secrets/n8n_api_url}",
+        "N8N_API_KEY": "{file:./secrets/n8n_api_key}"
+      }
     },
     "stitch": {
       "type": "remote",
@@ -41,6 +53,25 @@
       "headers": {
         "Authorization": "Bearer {file:./secrets/github_token}"
       }
+    },
+    "supabase": {
+      "type": "remote",
+      "url": "https://mcp.supabase.com/mcp?project_ref=gjarvfsjfbbrbbgvcatk",
+      "enabled": false
+    },
+    "twenty-crm": {
+      "type": "local",
+      "command": [
+        "/bin/zsh",
+        "-lc",
+        "TWENTY_API_KEY=\"$(< /Users/paulmv/.config/opencode/secrets/twenty_api_key)\" TWENTY_BASE_URL=\"$(< /Users/paulmv/.config/opencode/secrets/twenty_base_url)\" exec node /Users/paulmv/mcp/twenty-crm-mcp-server/index.js"
+      ],
+      "enabled": false
+    },
+    "robinhood": {
+      "type": "remote",
+      "url": "https://agent.robinhood.com/mcp/trading",
+      "enabled": false
     }
   }
 }
