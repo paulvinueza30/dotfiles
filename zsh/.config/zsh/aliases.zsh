@@ -12,6 +12,12 @@ alias head='ssh -i ~/.ssh/id_homelab head@10.0.0.110'
 alias worker-1='ssh -i ~/.ssh/id_homelab worker-1@10.0.0.234'
 alias worker-2='ssh -i ~/.ssh/id_homelab worker-2@10.0.0.224'
 alias ocs='ssh -i ~/.ssh/osc_vps opc@129.213.43.164'
+alias hypr='cd ~/.config/hypr && nvim .'
+alias kb='kubectl'
+alias nv='nvim .'
+alias dash='gh dash'
+alias homelab='docker exec -it homelab-dev zsh'
+
 tiny() {
     BACKEND="$HOME/Projects/tinyautomator-core/docker-compose.backend.yml"
     FRONTEND="$HOME/Projects/tinyautomator-core/docker-compose.frontend.yml"
@@ -29,13 +35,6 @@ tiny() {
     esac
 }
 
-# Make a dir and cd into it
-mdc (){
-  md -p "$1" && cd "$1"
+mdc() {
+    mkdir -p "$1" && cd "$1"
 }
-
-# Quick edit hypr config
-alias hypr='cd ~/.config/hypr && nvim .'
-alias kb='kubectl'
-alias nv='nvim'
-alias dash='gh dash'

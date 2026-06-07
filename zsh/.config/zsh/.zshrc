@@ -94,11 +94,9 @@ thefuck-fix() {
 }
 alias fuck='thefuck-fix'
 
-# Atuin - manual sync only (don't block startup)
+# Atuin - lazy-load shell integration (runs on first prompt)
 export ATUIN_SESSION_MANUAL=1
-# Lazy-load Atuin shell integration (runs on first prompt)
 _atuin_load() {
-  . "$HOME/.atuin/bin/env" 2>/dev/null
   eval "$(atuin init zsh)" 2>/dev/null
   precmd_functions=(${precmd_functions:#_atuin_load})
 }
@@ -133,7 +131,7 @@ precmd_functions+=(_atuin_load)
 
 # Starship prompt - use narrow config when terminal is small
 if (( ${COLUMNS:-80} < 90 )); then
-  export STARSHIP_CONFIG=~/dotfiles/starship/.config/starship-narrow.toml
+  export STARSHIP_CONFIG=~/.config/starship-narrow.toml
 else
   export STARSHIP_CONFIG=~/.config/starship.toml
 fi
@@ -142,7 +140,7 @@ eval "$(starship init zsh)"
 # Refresh prompt on terminal resize
 TRAPWINCH() {
   if (( ${COLUMNS:-80} < 90 )); then
-    export STARSHIP_CONFIG=~/dotfiles/starship/.config/starship-narrow.toml
+    export STARSHIP_CONFIG=~/.config/starship-narrow.toml
   else
     export STARSHIP_CONFIG=~/.config/starship.toml
   fi
@@ -150,17 +148,15 @@ TRAPWINCH() {
 }
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/home/paulmv/.local/share/gem/ruby/3.4.0/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
 
 bindkey -v
 export KEYTIMEOUT=1
 bindkey -M viins 'jj' vi-cmd-mode
 export PATH="$(go env GOBIN):$PATH"
-export PATH="/home/paulmv/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 export FUNCNEST=999
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/lib/ruby/gems/4.0.0/bin:$PATH"
 export GEM_HOME="$HOME/.local/share/gem"
 export PATH="$PATH:$GEM_HOME/bin"
