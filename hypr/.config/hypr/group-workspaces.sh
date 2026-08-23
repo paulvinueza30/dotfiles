@@ -37,37 +37,37 @@ group_workspace() {
     fi
 
     # Open the workspace and wait for it to be visible
-    hyprctl dispatch togglespecialworkspace "$ws_name"
+    hyprctl dispatch "hl.dsp.workspace.toggle_special(\"$ws_name\")"
     sleep 1.5
 
     # Focus first window and create group
-    hyprctl dispatch focuswindow "address:${windows[0]}"
+    hyprctl dispatch "hl.dsp.focus({ window = \"address:${windows[0]}\" })"
     sleep 0.8
-    hyprctl dispatch togglegroup
+    hyprctl dispatch "hl.dsp.group.toggle()"
     sleep 0.8
 
     # Add remaining windows to group (try both directions)
     for ((i=1; i<count; i++)); do
-        hyprctl dispatch focuswindow "address:${windows[$i]}"
+        hyprctl dispatch "hl.dsp.focus({ window = \"address:${windows[$i]}\" })"
         sleep 0.8
-        hyprctl dispatch moveintogroup l
+            hyprctl dispatch "hl.dsp.window.move({ into_group = \"l\" })"
         sleep 0.8
         # If that didn't work, try r
         local grouped=$(hyprctl activewindow -j | jq -r '.grouped')
         if [ "$grouped" = "0" ] || [ -z "$grouped" ]; then
-            hyprctl dispatch focuswindow "address:${windows[$i]}"
+            hyprctl dispatch "hl.dsp.focus({ window = \"address:${windows[$i]}\" })"
             sleep 0.8
-            hyprctl dispatch moveintogroup r
+                hyprctl dispatch "hl.dsp.window.move({ into_group = \"r\" })"
             sleep 0.8
         fi
     done
 
     # Lock the group so windows stay together
-    hyprctl dispatch lockactivegroup lock
+    hyprctl dispatch "hl.dsp.group.lock()"
     sleep 0.5
 
     # Close the workspace (windows stay grouped in background)
-    hyprctl dispatch togglespecialworkspace "$ws_name"
+    hyprctl dispatch "hl.dsp.workspace.toggle_special(\"$ws_name\")"
     sleep 0.5
 
     notify "$ws_name: grouped $count windows"
