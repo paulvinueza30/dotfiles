@@ -7,7 +7,10 @@ hl.bind("CTRL + F3", hl.dsp.exec_cmd("omarchy-cmd-screenrecord"))
 -- Middle-click copies nothing (clears primary selection).
 hl.bind("mouse:274", hl.dsp.exec_cmd("wl-copy -pc"), { non_consuming = true })
 
--- Dictation toggle.
+-- Dictation.
+hl.unbind("F9")
+o.bind("SUPER + SHIFT + apostrophe", "Start dictation (push-to-talk)", "voxtype record start")
+o.bind("SUPER + SHIFT + apostrophe", "Stop dictation (push-to-talk)", "sleep 0.25; voxtype record stop", { release = true })
 o.bind("SUPER + apostrophe", "Toggle Dictation", "voxtype record toggle")
 
 -- Swap TAB workspace navigation: TAB = former, CTRL+TAB = next.

@@ -4,8 +4,10 @@
 o.window({ class = "^ghostty$", title = "^\\[tmux\\]" }, { maximize = true })
 
 -- Zero gaps on app special workspaces.
+hl.workspace_rule({ workspace = "3", gaps_in = 0, gaps_out = 0 })
 hl.workspace_rule({ workspace = "special:Messaging", gaps_in = 0, gaps_out = 0 })
 hl.workspace_rule({ workspace = "special:AI", gaps_in = 0, gaps_out = 0 })
+hl.workspace_rule({ workspace = "special:ChatGPT", gaps_in = 0, gaps_out = 0 })
 hl.workspace_rule({ workspace = "special:forge", gaps_in = 0, gaps_out = 0 })
 
 -- Messaging workspace (Vesktop + Slack).
@@ -15,6 +17,7 @@ o.window("Slack", { workspace = "special:Messaging silent", no_initial_focus = t
 -- AI workspace (Claude + Gemini).
 o.window("Claude", { workspace = "special:AI silent", no_initial_focus = true, suppress_event = "activate activatefocus" })
 o.window(".*gemini\\.google\\.com.*", { workspace = "special:AI silent", no_initial_focus = true, suppress_event = "activate activatefocus" })
+o.window("(?i)chatgpt", { workspace = "special:ChatGPT silent" })
 
 -- Special workspaces (individual apps).
 o.window("spotify", { workspace = "special:Spotify silent", no_initial_focus = true })

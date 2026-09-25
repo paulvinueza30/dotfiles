@@ -1,6 +1,9 @@
 -- Keep only your personal keybinding overrides here. Add new bindings or
 -- unbind defaults before replacing them.
 
+-- Open the AI usage panel from anywhere.
+o.bind("SUPER + SHIFT + U", "Toggle AI usage", "omarchy-shell omarchy.agents toggle")
+
 -- See current bindings and descriptions:
 --   omarchy menu keybindings --print
 
@@ -60,13 +63,16 @@ rebind_workspace_app("SUPER + SHIFT", "S", "Spotify")
 rebind_workspace_app("SUPER + SHIFT", "M", "Messaging")
 rebind_workspace_app("SUPER + SHIFT", "O", "Obsidian")
 rebind_workspace_app("SUPER + SHIFT", "Z", "NeetCode")
-rebind_workspace_app("SUPER + SHIFT", "A", "AI")
+rebind_workspace_app("SUPER + SHIFT", "A", "ChatGPT")
 rebind_workspace_app("SUPER + SHIFT", "R", "Reddit")
 rebind_workspace_app("SUPER + SHIFT", "P", "ProxMox")
 rebind_workspace_app("SUPER + SHIFT", "N", "N8N")
 
 -- DeskThing lives on semicolon.
 o.bind("SUPER + SHIFT + semicolon", "DeskThing", hl.dsp.workspace.toggle_special("DeskThing"))
+
+-- Hermes desktop special workspace
+rebind_workspace_app("SUPER + SHIFT", "H", "Hermes")
 
 -- Close special workspace when switching to regular workspaces.
 for workspace = 1, 10 do
@@ -84,6 +90,7 @@ o.bind("SUPER + ALT + LEFT", "Move window left", hl.dsp.window.move({ direction 
 o.bind("SUPER + ALT + RIGHT", "Move window right", hl.dsp.window.move({ direction = "r" }))
 o.bind("SUPER + ALT + UP", "Move window up", hl.dsp.window.move({ direction = "u" }))
 o.bind("SUPER + ALT + DOWN", "Move window down", hl.dsp.window.move({ direction = "d" }))
+
 
 -- Keyboard backlight via brightnessctl (replaces Omarchy's helper).
 hl.unbind("XF86KbdBrightnessDown")

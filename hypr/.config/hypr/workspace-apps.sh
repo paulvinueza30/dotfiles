@@ -21,6 +21,8 @@ declare -A cmds=(
   [Gmail]="uwsm-app -- /usr/bin/chromium --app=https://mail.google.com/ --profile-directory=Clean"
   [ProxMox]="uwsm-app -- /usr/bin/chromium --app=https://proxmox.local/ --profile-directory=Clean"
   [Obsidian]="uwsm-app -- obsidian -disable-gpu --enable-wayland-ime"
+  [Hermes]="uwsm-app -- $HOME/.local/bin/hermes desktop"
+  [ChatGPT]="uwsm-app -- /usr/bin/chatgpt"
 )
 
 if [[ -n ${cmds[$TARGET]} ]] && ! hyprctl clients -j | jq -e --arg ws "special:$TARGET" \
